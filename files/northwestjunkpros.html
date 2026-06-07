@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Northwest Junk Pros — Professional junk removal and eco-friendly hauling services across the Pacific Northwest. Serving Central Oregon and surrounding areas. Free estimates.">
+<title>Northwest Junk Pros | Junk Removal & Hauling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #2d5a27;
+    --green-dark: #1a3a16;
+    --green-light: #4a8c42;
+    --amber: #c97d1a;
+    --amber-light: #e8a532;
+    --cream: #f5f0e8;
+    --off-white: #faf8f4;
+    --charcoal: #1e1e1e;
+    --mid: #444;
+    --muted: #777;
+    --border: #ddd8cc;
+    --radius: 4px;
+    --font-head: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--charcoal);
+    background: var(--off-white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(26, 58, 22, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    border-bottom: 2px solid var(--amber);
+  }
+
+  .nav-logo {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .nav-logo span { color: var(--amber-light); }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--amber-light); }
+
+  .nav-cta {
+    background: var(--amber);
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: var(--radius);
+    font-weight: 600 !important;
+  }
+
+  .nav-cta:hover { background: var(--amber-light); color: #fff !important; }
+
+  .nav-toggle { display: none; cursor: pointer; background: none; border: none; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1800');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.32);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 760px;
+    padding: 4rem 3rem 4rem 5vw;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--amber-light);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.92);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--amber-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: rgba(0,0,0,0.55);
+    border: 2px solid #fff;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  .btn-outline:hover { background: rgba(0,0,0,0.75); border-color: #fff; }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--green-dark);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .trust-icon {
+    width: 32px; height: 32px;
+    background: var(--amber);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-icon svg { width: 16px; height: 16px; fill: #fff; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 5rem 2rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--font-head);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: var(--charcoal);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 560px;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+
+  .service-img {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-body {
+    padding: 1.5rem;
+  }
+
+  .service-icon {
+    width: 44px; height: 44px;
+    background: var(--green);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon svg { width: 22px; height: 22px; fill: #fff; }
+
+  .service-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card p { font-size: 0.95rem; color: var(--mid); line-height: 1.6; }
+
+  .service-items {
+    margin-top: 1rem;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+
+  .tag {
+    background: var(--cream);
+    color: var(--green);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 2px;
+    border: 1px solid #d8d2c5;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--off-white); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+    counter-reset: step;
+  }
+
+  .step {
+    position: relative;
+    padding: 2rem 1.5rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    counter-increment: step;
+  }
+
+  .step::before {
+    content: counter(step);
+    font-family: var(--font-head);
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--cream);
+    position: absolute;
+    top: -0.5rem; right: 1rem;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .step-num {
+    display: inline-block;
+    background: var(--amber);
+    color: #fff;
+    font-family: var(--font-head);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 10px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .step h3 {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .step p { font-size: 0.92rem; color: var(--mid); }
+
+  /* ── PHOTO STRIP ── */
+  .photo-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .photo-strip img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+
+  .photo-strip img:hover { transform: scale(1.04); }
+
+  /* ── WHY US ── */
+  .why { background: var(--green-dark); color: #fff; }
+
+  .why .section-title { color: #fff; }
+  .why .section-label { color: var(--amber-light); }
+  .why .section-sub { color: rgba(255,255,255,0.75); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .why-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .why-card:hover { background: rgba(255,255,255,0.1); }
+
+  .why-num {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--amber-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card p { font-size: 0.92rem; color: rgba(255,255,255,0.7); }
+
+  /* ── DONATE ── */
+  .donate {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    min-height: 400px;
+  }
+
+  .donate-img {
+    width: 100%; height: 100%; min-height: 380px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .donate-content {
+    padding: 4rem 3rem;
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--cream);
+  }
+
+  .leaf-icon {
+    width: 52px; height: 52px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .leaf-icon svg { width: 26px; height: 26px; fill: #fff; }
+
+  /* ── CONTACT ── */
+  .contact { background: #fff; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-family: var(--font-head);
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .contact-info p { color: var(--mid); margin-bottom: 2rem; }
+
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-detail-icon {
+    width: 40px; height: 40px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-icon svg { width: 18px; height: 18px; fill: var(--green); }
+
+  .contact-detail strong { display: block; font-weight: 600; color: var(--charcoal); font-size: 0.9rem; }
+  .contact-detail span { color: var(--mid); font-size: 0.95rem; }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--charcoal);
+    background: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--green); }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand p { font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.7; }
+
+  .footer-col h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: var(--amber-light); }
+
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-logo-text {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo-text span { color: var(--amber-light); }
+
+  /* ── SERVICE AREA ── */
+  .service-area { background: var(--cream); }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .area-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .area-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .area-pin {
+    width: 46px; height: 46px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .area-pin svg { width: 22px; height: 22px; fill: #fff; }
+
+  .area-region {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+    margin-bottom: 2px;
+  }
+
+  .area-title {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    line-height: 1.1;
+  }
+
+  .area-desc {
+    font-size: 0.93rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .city-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  .city-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .city-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green-light);
+    flex-shrink: 0;
+  }
+
+  .area-cta {
+    display: inline-block;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    margin-top: auto;
+    transition: color 0.2s;
+  }
+
+  .area-cta:hover { color: var(--amber); }
+
+  .area-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    font-size: 0.92rem;
+    color: var(--mid);
+  }
+
+  .area-note a { color: var(--green); font-weight: 600; text-decoration: none; }
+  .area-note a:hover { color: var(--amber); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    /* NAV */
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--green-dark); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+    .nav-links .nav-cta { text-align: center; padding: 12px 20px; }
+
+    /* HERO */
+    .hero { min-height: 92vh; }
+    .hero-content { padding: 2.5rem 1.25rem 3rem; }
+    .hero h1 { font-size: clamp(2.8rem, 14vw, 4.5rem); }
+    .hero-sub { font-size: 1rem; }
+    .hero-actions { flex-direction: column; gap: 0.75rem; }
+    .hero-actions .btn { width: 100%; justify-content: center; padding: 16px 20px; font-size: 1.05rem; }
+
+    /* TRUST BAR */
+    .trust-bar { gap: 1rem; padding: 0.75rem 1rem; flex-wrap: wrap; justify-content: center; }
+    .trust-item { flex-direction: column; align-items: center; gap: 4px; font-size: 0.72rem; text-align: center; width: 56px; }
+    .trust-item span { display: block; }
+    .trust-icon { width: 28px; height: 28px; }
+    .trust-icon svg { width: 13px; height: 13px; }
+
+    /* SECTIONS */
+    section { padding: 3rem 1.25rem; }
+    .section-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+    .section-sub { font-size: 0.95rem; margin-bottom: 2rem; }
+
+    /* SERVICES */
+    .services-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+    .service-img { height: 180px; }
+
+    /* HOW IT WORKS */
+    .steps { grid-template-columns: 1fr; gap: 1rem; }
+    .step { padding: 1.5rem 1.25rem; }
+    .step::before { font-size: 4rem; top: -0.25rem; right: 0.75rem; }
+
+    /* PHOTO STRIP */
+    .photo-strip { grid-template-columns: 1fr 1fr; height: 220px; }
+    .photo-strip img:nth-child(3), .photo-strip img:nth-child(4) { display: none; }
+
+    /* WHY US */
+    .why-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .why-card { padding: 1.25rem 1rem; }
+    .why-num { font-size: 2.2rem; }
+
+    /* DONATE */
+    .donate { grid-template-columns: 1fr; }
+    .donate-img { min-height: 220px; max-height: 260px; width: 100%; }
+    .donate-content { padding: 2rem 1.25rem; }
+    .donate-content .btn { width: 100%; justify-content: center; }
+
+    /* SERVICE AREA */
+    .area-grid { grid-template-columns: 1fr; }
+    .city-list { grid-template-columns: 1fr 1fr; }
+    .area-card { padding: 1.5rem 1.25rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .contact-info h2 { font-size: 2rem; }
+    .form-group input, .form-group textarea, .form-group select { font-size: 16px; }
+    .contact .btn { width: 100%; justify-content: center; }
+
+    /* FOOTER */
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-col:last-child { display: none; }
+    footer { padding: 2.5rem 1.25rem 1.5rem; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+
+  @media (max-width: 400px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.6rem; }
+    nav { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Northwest <span>Junk Pros</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#service-area">Service Area</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Pacific Northwest's Trusted Haulers</p>
+    <h1>We Haul<em>It All.</em></h1>
+    <p class="hero-sub">Professional junk removal, eco-friendly disposal, and donation pickup for homes and businesses across Central Oregon and the Pacific Northwest.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Get a Free Estimate</a>
+      <a href="tel:+15414252008" class="btn btn-outline">Call Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 1l3.09 6.26L22 8.27l-5 4.87L18.18 20 12 16.77 5.82 20 7 13.14 2 8.27l6.91-1.01L12 1z"/></svg>
+    </div>
+    <span>5-Star Rated Service</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.37a1 1 0 001.68 1.08C7 18.5 9 16 12 14.5c-1.8 3.2-1.5 6.5-1.5 6.5s6.5-4 6.5-12C17 8 17 8 17 8z"/></svg>
+    </div>
+    <span>Eco-Friendly Disposal</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+    </div>
+    <span>Same-Day Available</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+    </div>
+    <span>Upfront Pricing</span>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span>Donation Pickup</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="section-label">What We Remove</p>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From a single piece of furniture to a full property cleanout — we've got the truck, the crew, and the know-how.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img class="service-img" src="pexels-rdne-7464689.jpg" alt="Two workers loading a couch into a van for residential cleanout" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+          </div>
+          <h3>Residential Cleanouts</h3>
+          <p>Garage, attic, basement, whole-house — we clear it fast and responsibly so you can get your space back.</p>
+          <div class="service-items">
+            <span class="tag">Garage</span>
+            <span class="tag">Attic</span>
+            <span class="tag">Basement</span>
+            <span class="tag">Estate</span>
+            <span class="tag">Hoarder</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="pexels-robertkso-29348622.jpg" alt="Large pile of furniture and junk ready for hauling" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 002 2h8a2 2 0 002-2V7H6v12z"/></svg>
+          </div>
+          <h3>Furniture & Appliances</h3>
+          <p>Couches, mattresses, refrigerators, washers — we handle the heavy lifting and haul it away the same day.</p>
+          <div class="service-items">
+            <span class="tag">Sofas</span>
+            <span class="tag">Mattresses</span>
+            <span class="tag">Fridges</span>
+            <span class="tag">Washer/Dryer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="pexels-fatih-turan-63325184-12314248.jpg" alt="Abandoned overgrown bus and yard debris ready for removal" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M13.8 8.2L12 2 10.2 8.2 4 6.5l4.3 4.8L3 15l6.3-.9L8 21l4-5.2 4 5.2-1.3-6.9L21 15l-5.3-3.7L20 6.5l-6.2 1.7z"/></svg>
+          </div>
+          <h3>Yard & Debris Removal</h3>
+          <p>Old fencing, brush piles, yard waste, demolition debris — cleared from your property and properly disposed of.</p>
+          <div class="service-items">
+            <span class="tag">Brush</span>
+            <span class="tag">Fencing</span>
+            <span class="tag">Demo debris</span>
+            <span class="tag">Lumber</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img class="service-img" src="pexels-cpkhanal-37076702.jpg" alt="Trucks hauling large commercial loads of junk and debris" loading="lazy">
+        <div class="service-body">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 12.08L4.14 10.5 12 6l7.86 4.5L12 15.08zm-5 4v-2h2v2H7zm4 0v-2h2v2h-2zm4 0v-2h2v2h-2z"/></svg>
+          </div>
+          <h3>Commercial Cleanouts</h3>
+          <p>Office closures, storage units, rental property turnovers — quick, professional, and on your schedule.</p>
+          <div class="service-items">
+            <span class="tag">Office</span>
+            <span class="tag">Storage unit</span>
+            <span class="tag">Rental property</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-label">Simple Process</p>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">No hassle, no surprises. We make junk removal as easy as a phone call.</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">Step 01</span>
+        <h3>Call or Book Online</h3>
+        <p>Give us a call or fill out our quick form. We'll schedule a time that works for you — even same-day.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">Step 02</span>
+        <h3>We Give You a Quote</h3>
+        <p>Our crew shows up on time, looks at the job, and gives you a straight upfront price before anything moves.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">Step 03</span>
+        <h3>We Do the Heavy Lifting</h3>
+        <p>You say the word, we load it up. No extra fees, no stress. We handle everything from carry-out to cleanup.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">Step 04</span>
+        <h3>Eco-Friendly Disposal</h3>
+        <p>Items that can be donated go to local organizations. The rest is recycled or disposed of responsibly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <img src="https://images.pexels.com/photos/7464759/pexels-photo-7464759.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pile of junk outside a building" loading="lazy">
+  <img src="https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Blue dumpster filled with trash on the side of a road" loading="lazy">
+  <img src="https://images.pexels.com/photos/33041/antelope-canyon-lower-canyon-arizona.jpg?auto=compress&cs=tinysrgb&w=600" alt="Oregon mountains and forest landscape" loading="lazy">
+  <img src="https://images.pexels.com/photos/1486785/pexels-photo-1486785.jpeg?auto=compress&cs=tinysrgb&w=600" alt="House near bare trees in rural Oregon" loading="lazy">
+</div>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div class="container">
+    <p class="section-label">Why Northwest Junk Pros</p>
+    <h2 class="section-title">Local People,<br>Real Results</h2>
+    <p class="section-sub">We're your neighbors — not a franchise. When you call us, you get a local crew that treats your property with respect.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">100%</div>
+        <h3>Locally Owned</h3>
+        <p>Based right here in Oregon — not a national chain. We know the area, the roads, and the disposal facilities.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">70%</div>
+        <h3>Diverted from Landfill</h3>
+        <p>We donate, recycle, and repurpose everything we can. Junk removal doesn't have to mean waste.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">Same</div>
+        <h3>Day Service Available</h3>
+        <p>Need it gone today? We'll do our best to make it happen. Just call and we'll work around your schedule.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">$0</div>
+        <h3>Free Estimates</h3>
+        <p>No obligation. We'll look at the job and tell you exactly what it costs — no hidden fees, no surprises at the end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ECO/DONATE SECTION -->
+<section style="padding:0;" class="donate">
+  <img class="donate-img" src="https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Environmental responsibility and recycling" loading="lazy">
+  <div class="donate-content">
+    <div class="leaf-icon">
+      <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.37a1 1 0 001.68 1.08C7 18.5 9 16 12 14.5c-1.8 3.2-1.5 6.5-1.5 6.5s6.5-4 6.5-12C17 8 17 8 17 8z"/></svg>
+    </div>
+    <p class="section-label" style="margin-bottom:0.5rem;">We Give Back</p>
+    <h2 class="section-title" style="color: var(--green-dark);">Donation Pickup</h2>
+    <p style="color: var(--mid); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.7;">Got furniture, appliances, or household goods still in usable condition? We partner with local nonprofits and donation centers to make sure your stuff finds a new home instead of the landfill. You don't lift a finger.</p>
+    <a href="#contact" class="btn btn-primary">Schedule a Pickup</a>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="service-area" id="service-area">
+  <div class="container">
+    <p class="section-label">Where We Work</p>
+    <h2 class="section-title">Our Service Areas</h2>
+    <p class="section-sub">Two crews covering a big stretch of Oregon — from the Cascades to the coast valleys. If you're not sure we reach you, just call.</p>
+
+    <div class="area-grid">
+
+      <div class="area-card">
+        <div class="area-card-header">
+          <div class="area-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <span class="area-region">Central Oregon</span>
+            <h3 class="area-title">High Desert Region</h3>
+          </div>
+        </div>
+        <p class="area-desc">Serving the high desert communities of Central Oregon — from resort towns to rural ranch properties.</p>
+        <ul class="city-list">
+          <li><span class="city-dot"></span>Bend</li>
+          <li><span class="city-dot"></span>Redmond</li>
+          <li><span class="city-dot"></span>Sisters</li>
+          <li><span class="city-dot"></span>Sunriver</li>
+          <li><span class="city-dot"></span>La Pine</li>
+          <li><span class="city-dot"></span>Gilchrist</li>
+          <li><span class="city-dot"></span>Crescent</li>
+        </ul>
+        <a href="#contact" class="area-cta">Get a Quote →</a>
+      </div>
+
+      <div class="area-card">
+        <div class="area-card-header">
+          <div class="area-pin">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <span class="area-region">Willamette Valley</span>
+            <h3 class="area-title">Eugene & McKenzie Region</h3>
+          </div>
+        </div>
+        <p class="area-desc">Covering Eugene and the communities along the McKenzie River corridor — from city neighborhoods to riverside cabins and rural properties.</p>
+        <ul class="city-list">
+          <li><span class="city-dot"></span>Eugene</li>
+          <li><span class="city-dot"></span>Springfield</li>
+          <li><span class="city-dot"></span>Walterville</li>
+          <li><span class="city-dot"></span>Vida</li>
+          <li><span class="city-dot"></span>Blue River</li>
+          <li><span class="city-dot"></span>McKenzie Bridge</li>
+          <li><span class="city-dot"></span>Surrounding Areas</li>
+        </ul>
+        <a href="#contact" class="area-cta">Get a Quote →</a>
+      </div>
+
+    </div>
+
+    <div class="area-note">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:var(--green);flex-shrink:0;margin-top:2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <p>Not seeing your city? Give us a call at <a href="tel:+15414252008">(541) 425-2008</a> — we may still be able to help or refer you to someone who can.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <p class="section-label">Get in Touch</p>
+        <h2>Ready to Clear<br>the Clutter?</h2>
+        <p>Fill out the form or give us a call for a free, no-obligation estimate. We'll get back to you fast.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <span>(541) 425-2008</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <span>info@northwestjunkpros.com</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <strong>Service Area</strong>
+            <span>Central Oregon & Pacific Northwest</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          </div>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon – Sat: 7am – 7pm | Sun: By Appointment</span>
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="first_name" placeholder="Joey" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(541) 425-2008" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>Residential Cleanout</option>
+            <option>Furniture / Appliance Removal</option>
+            <option>Yard & Debris Removal</option>
+            <option>Commercial Cleanout</option>
+            <option>Donation Pickup</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Tell Us About the Job</label>
+          <textarea id="message" name="message" placeholder="What needs to go? A rough idea of quantity/size is helpful..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content: center;">
+          Send My Free Estimate Request
+        </button>
+
+        <p style="font-size:0.82rem; color: var(--muted); margin-top:0.75rem; text-align:center;">We'll respond within a few hours. No spam, ever.</p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-text">Northwest <span>Junk Pros</span></div>
+      <p>Professional junk removal, eco-friendly hauling, and donation pickup for homes and businesses across the Pacific Northwest. Locally owned and operated.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Residential Cleanouts</a></li>
+        <li><a href="#services">Furniture & Appliances</a></li>
+        <li><a href="#services">Yard & Debris Removal</a></li>
+        <li><a href="#services">Commercial Cleanouts</a></li>
+        <li><a href="#services">Donation Pickup</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="tel:+15414252008">(541) 425-2008</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Northwest Junk Pros. All rights reserved.</span>
+    <span>Photos via <a href="https://www.pexels.com" style="color: var(--amber-light);" target="_blank" rel="noopener">Pexels</a> — Free to use under the Pexels License</span>
+  </div>
+</footer>
+
+<style>
+  .mobile-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--green-dark);
+    border-top: 2px solid var(--amber);
+    padding: 10px 1rem;
+    gap: 10px;
+  }
+  .mobile-cta-bar a {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 10px;
+    border-radius: var(--radius);
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .mobile-cta-bar a:active { opacity: 0.8; }
+  .mobile-cta-call { background: var(--amber); color: #fff; }
+  .mobile-cta-quote { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.4); color: #fff; }
+  .mobile-cta-bar svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .mobile-cta-bar { display: flex; }
+    body { padding-bottom: 72px; }
+    footer { padding-bottom: 80px; }
+  }
+</style>
+
+<div class="mobile-cta-bar">
+  <a href="tel:+15414252008" class="mobile-cta-call">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Call Now
+  </a>
+  <a href="#contact" class="mobile-cta-quote">Free Quote</a>
+</div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Request Sent — We\'ll be in touch soon!';
+    btn.style.background = '#2d5a27';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
